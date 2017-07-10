@@ -1,95 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OC Realtor</title>
+  <title><%= yield(:page_title) %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag %>
+  <link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display|Clicker+Script" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,900|Cinzel+Decorative:400,900|Playball|Playfair+Display:400,900" rel="stylesheet">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 </head>
-
 <body>
 
-
-<div class="page-minus-footer">
-  <%= image_tag "background.jpg", class: "bg" %>
-
-
-  <!-- MENU GOES HERE -->
-  <div id="main-nav" class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container-fluid">
-          <div class="navbar-header">
-          	<%= link_to "OC Realtor", root_path, class:"navbar-brand" %>
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-              </button>
-          </div>
-          <div class="collapse navbar-collapse navbar-menubuilder">
-              <ul class="nav navbar-nav navbar-right">
-                  <li><%= link_to "Home", root_path, class: "center-ul-hover" %></li>
-                  <li><%= link_to "Blog", blogs_path, class: "center-ul-hover", data: { turbolinks: false } %></li>
-                  <% if current_user && (current_user.admin || ( current_user.buyer && current_user.status_confirmed )) %>
-                    <li><%= link_to "Listings", listings_path, class: "center-ul-hover" %></li>
-                  <% end %>
-                  <li><%= link_to "Contact Me", new_contact_path, class: "center-ul-hover" %></li>
-                  <% if current_user %>
-                  	<li><%= link_to "Dashboard", user_path(current_user), class: "center-ul-hover" %></li>
-                  <% else %>
-  	                <li><%= link_to "Sign Up", new_user_registration_path, class: "center-ul-hover" %></li>
-                  <% end %>
-              </ul>
-          </div>
+  <div id="liz-nav" class="navbar navbar-default " role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header"><%= link_to 'Liz Bayardelle', root_path, class: "navbar-brand" %>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
       </div>
-  </div>
+      <div class="collapse navbar-collapse navbar-menubuilder">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="hvr-underline-from-center"><%= link_to 'Home', root_path %></li>
+              <li class="hvr-underline-from-center"><%= link_to 'Blog', blogs_path %></li>
+              <li class="hvr-underline-from-center"><%= link_to 'Portfolio', services_portfolio_path %></li>
+              <li class="hvr-underline-from-center"><%= link_to 'Hiring Information', services_hire_path %></li>
+          </ul>
+      </div> <!-- items (collapse) -->
+    </div> <!-- fluid container -->
+  </div> <!-- liz nav -->
+
+  <% if flash[:notice] %>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:notice] %>
+    </div>
+  <% elsif flash.now[:alert] %>
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash.now[:alert] %>
+    </div>
+  <% elsif flash[:alert] %>
+    <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+<%= yield %>
+
+<footer class="text-center">
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <h1>Liz Bayardelle</h1>
+  <p>Tossing her digital cap over the wall since 2003.</p>
+  <p><a href="mailto:lizbayardelle@gmail.com">Email</a> | <a href="https://www.linkedin.com/in/lizbayardelle">LinkedIn</a> | <a href="http://stackoverflow.com/users/4468463/liz">Stack Overflow</a>
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <%= link_to root_url(subdomain: false) do %>
+    <%= image_tag 'favicon.ico', style: "position: relative; float: right; padding: 0 5px 5px 0; height: 20px" %>
+  <% end %>
 
 
-
-  <!-- flash notice area -->
-  <div class="flash-notice-area">
-    <% if flash[:notice] %>
-      <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:notice] %>
-      </div>
-    <% elsif flash.now[:alert] %>
-      <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash.now[:alert] %>
-      </div>
-    <% elsif flash[:alert] %>
-      <div class="alert alert-warning">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
-  </div> <!-- flash notice area -->
-
-
-  <%= yield %>
-</div> <!-- page minus footer -->
-
-<footer style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)">
-  <div class="container text-center">
-    <h1>OC Realtor</h1>
-    <h2>Helping you find the right home.</h2>
-    <div class="row social-row">
-      <a href=""><i class="icon ion-social-facebook" target="_blank"></i></a>
-      <a href="https://www.linkedin.com/in/anthonybayardelle/" target="_blank"><i class="icon ion-social-linkedin"></i></a>
-      <a href="https://twitter.com/OCCaliRealtor" target="_blank"><i class="icon ion-social-twitter"></i></a>
-      <a href="https://plus.google.com/u/0/117197625945652719096" target="_blank"><i class="icon ion-social-googleplus"></i></a>
-      <a href="https://www.youtube.com/channel/UCmvIhCtIiOOOemG_d6dC3vg" target="_blank"><i class="icon ion-social-youtube"></i></a>
-      <a href="https://www.pinterest.com/orangecountyrealtor/" target="_blank"><i class="icon ion-social-pinterest"></i></a>
-    </div> <!-- social row -->
-    <p>Website by Linchpin Industries, LLC</p>
-  </div> <!-- container -->
 </footer>
-<div class="row text-center" style="padding-bottom: 30px; background-color: none">
-  <div class="container">
-    <%= image_tag "rockstone_realty_logo.png", alt: "Rockstone Realty", style: "max-width: 486px; padding-top: 30px" %>
-  </div>
-</div>
 
 </body>
 </html>

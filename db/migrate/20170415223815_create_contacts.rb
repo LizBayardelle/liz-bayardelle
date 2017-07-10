@@ -7,8 +7,8 @@ class CreateContacts < ActiveRecord::Migration
       t.string :email
       t.string :preferred_contact
       t.string :message
-      t.boolean :buying
-      t.boolean :selling
+      t.string :purpose
+      t.boolean :archived, default: false
 
       t.timestamps null: false
     end

@@ -1,226 +1,97 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+*= require magnific-popup
+*= require_tree .
+*= require_self
+*/
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'ionicons';
 
-
-
-
-
-
-/*
-==============================================
-Variables
-==============================================
-*/
-
-$font-decorative: 'Cinzel Decorative', cursive;
+$color-purple: #A7226E;
+$color-red: #EC2049;
+$color-orange: #F26B38;
+$color-dark-grey: #5e5e5e;
+$color-middle-grey: #939393;
+$color-light-grey: #d2d2d2;
 $font-serif: 'Playfair Display', serif;
-$font-cursive: 'Playball', cursive;
-$font-sans: 'Nunito Sans', sans-serif;
-.font-sans { font-family: $font-sans }
-
-$blue-dark: #031D44;
-$blue-light: #4D7EA8;
-$red: #890E05;
-$grey-dark: #727372;
-$grey-light: #B2B2B2;
-$creme: #F4E8C1;
-$creme-background: #F4F0E3;
-$text-shadow: 1px 2px 2px $blue-light;
-$transparent-white: rgba(255, 255, 255, 0.5);
-$transparent-white-overlay: rgba(255, 255, 255, 0.75);
-.background-creme { background-color: $creme }
-
-.border-grey { border-color: $grey-dark }
+$font-sans: 'Muli', sans-serif;
+$font-cursive: 'Clicker Script', cursive;
 
 
 
+a { color: $color-red !important; }
+a:hover, a:focus { color: $color-orange !important; }
+a:visited { color: $color-purple !important; }
 
+h1 { font-family: $font-serif !important; font-weight: bolder; color: $color-dark-grey !important; }
+h2 { font-family: $font-sans !important; color: $color-dark-grey !important; }
+h3 { font-family: $font-sans !important; color: $color-middle-grey !important; }
+p { font-family: $font-sans !important; color: $color-dark-grey !important; }
 
-
-/*
-==============================================
-Basics
-==============================================
-*/
-
-body { font-family: $font-serif; color: $blue-dark; max-width: 100%; overflow-x: hidden;}
-label { text-transform: capitalize; }
-h1 { font-family: $font-decorative; text-shadow: $text-shadow; font-size: 50px; }
-@media screen and (max-width: 768px) { h1 { font-size: 30px }}
-.linkish { cursor: pointer; text-decoration: underline; color: $red; }
-a { color: $grey-dark }
-hr { border-color: $blue-dark }
-img { width: 100% }
-.bottom-buffer { height: 70px }
-.buffer { height: 50px }
-td { padding: 5px}
-.blue-stripe { background-color: $blue-dark; box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); color: white; position: relative; padding: 25px 0 25px 0; font-size: 20px}
-.blue-stripe * { color: white !important; }
-@media screen and (max-width: 992px) and (min-width: 768px) { .blue-stripe { font-size: 17px }}
-.header-row { text-align: center; }
-p { font-family: $font-sans }
-
-@media screen and (min-width: 1600px) { .container.lg-white { background-color: $transparent-white; z-index: 5} }
-.container.bg-white { background-color: $transparent-white }
-
-
-/* CARDS */
-.card {
-	position: relative;
-	background-color: white;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-	margin: 25px;
-	width: calc(50% - 60px);
-	box-sizing: border-box;
-	display: inline-block;
-	vertical-align: top;
+label {
+  font-color: $color-dark-grey !important;
+  font-family: $font-sans !important;
+  font-weight: bolder !important;
+  text-transform: capitalize !important;
 }
 
-.card *:hover {
-	text-decoration: none !important;
+.dark-grey-bar {
+  background-color: $color-dark-grey !important;
+  padding: 20px 0 40px 0;
 }
 
-.card .image-box {
-	max-height: 250px;
-	overflow: hidden;
+.dark-grey-bar h1 {
+  color: white !important;
+  padding-bottom: 15px;
 }
 
-.card .padding-box {
-	padding: 15px;
+.dark-grey-bar p {
+  color: white !important;
 }
 
-.card.padding-box {
-	padding: 25px;
+.cursive { font-family: $font-cursive; }
+
+.btn {
+  background: $color-purple;
+  background-image: -webkit-linear-gradient(top, $color-purple, $color-orange) !important;
+  background-image: -moz-linear-gradient(top, $color-purple, $color-orange) !important;
+  background-image: -ms-linear-gradient(top,$color-purple, $color-orange) !important;
+  background-image: -o-linear-gradient(top, $color-purple, $color-orange) !important;
+  background-image: linear-gradient(to bottom, $color-purple, $color-orange) !important;
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  color: white !important;
+  padding: 10px 20px 10px 20px !important;
+  text-decoration: none;
+  font-family: $font-sans;
+  font-weight: bolder;
+  font-size: 18px !important;
+  margin: 10px 0 10px 0;
 }
 
-.card:hover {
-	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+.btn:visited {
+  color: white !important;
 }
 
-.card h1 {
-	font-size: 30px;
-	color: $blue-dark !important;
+.btn:hover {
+  text-decoration: none !important;
+  color: $color-red !important;
+  border: solid medium $color-red !important;
+  background: white !important;
+  background-image: none !important;
+  padding: 8px 20px 8px 20px !important;
 }
 
-.card h4, p {
-	color: $blue-dark !important;
-}
-
-.card.full-width h1 {
-	font-size: 50px;
-}
-
-@media screen and (max-width: 768px) {
-	.card {
-		width: calc(100% - 60px);
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	.card {
-		width: calc(33% - 60px);
-	}
-}
-
-	/* Card Variations */
-	.no-hover.card:hover {
-		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-	}
-
-	.card.full-width {
-		width: 90%;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.card.full-width .padding-box {
-		padding: 35px 50px 35px 50px;
-	}
-
-/* BUTTONS */
-.btn, button {
-	border-radius: 1px;
-	font-size: 20px;
-	background-color: $red;
-	color: white;
-	font-weight: 900;
-	text-transform: capitalize;
-  	display: inline-block;
-  	vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-  	transform: perspective(1px) translateZ(0);
-  	box-shadow: 0 0 1px transparent;
-    -webkit-transition-duration: 0.3s;
-  	transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-  	transition-property: transform;
-  	margin: 10px 0 10px 0;
-}
-
-.btn:hover, .btn:focus, .btn:active, button:hover, button:focus, button:active {
-	background-color: $blue-dark;
-	color: white;
-    -webkit-transform: scale(1.1);
-  	transform: scale(1.1);
-}
-
-
-
-
-/* ALERTS */
-
-.alert {
-		position: relative;
-    background: white;
-    color: $blue-dark;
-		border-radius: 0;
-		margin: 0;
-		z-index: 30;
-}
-
-.alert-success { border-color: $red; }
-.alert-info { border-color: $blue-dark; }
-.alert-warning, .alert-danger { border-color: #F08080; }
-.alert button { margin-top: -3px; }
-
-/* GLOW */
-textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-.uneditable-input:focus {
-  border-color: rgba(	137, 14, 5, 0.8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(	137, 14, 5, 0.6);
-  outline: 0 none;
+.outline-box {
+  border: solid thin $color-light-grey;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  margin: 20px 0 20px 0;
 }
 
 
@@ -234,106 +105,90 @@ input[type="color"]:focus,
 
 
 
-/*
-==============================================
-Full Page Background
-==============================================
-*/
-.container { position: relative; }
-footer { position: relative }
-
-img.bg {
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
-
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
-
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
-  img.bg {
-    left: 50%;
-    margin-left: -512px;   /* 50% */
-  }
-}
 
 
 
 
-/*
-==============================================
-Main Nav
-==============================================
-*/
-
-#main-nav.navbar-default .navbar-brand {
-    font-family: $font-decorative;
-    color: $creme;
-    font-size: 25px;
-    margin-top: 5px;
-		z-index: 20;
-}
-
-#main-nav.navbar-default {
-    font-size: 16px;
-		font-family: $font-serif;
-    background-color: $blue-dark;
-    border: none;
-		margin-bottom: 0px;
-		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-#main-nav.navbar-default .navbar-nav>li>a {
-    color: white;
-		height: 55px;
-}
-
-#main-nav.navbar-default .navbar-nav>.active>a,
-#main-nav.navbar-default .navbar-nav>.active>a:hover,
-#main-nav.navbar-default .navbar-nav>.active>a:focus {
-    color: rgba(85, 85, 85, 1);
-}
-#main-nav.navbar-default .navbar-toggle {
-    border-color: $creme;
-}
-#main-nav.navbar-default .navbar-toggle:hover,
-#main-nav.navbar-default .navbar-toggle:focus {
-    background-color: $creme;
-}
-#main-nav.navbar-default .navbar-toggle .icon-bar {
-    background-color: $creme;
-}
-#main-nav.navbar-default .navbar-toggle:hover .icon-bar,
-#main-nav.navbar-default .navbar-toggle:focus .icon-bar {
-    background-color: $blue-dark;
-}
-
-/* Underline From Center */
-.center-ul-hover {
+/* Grow */
+.hvr-grow {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+/* LIZ NAV */
+#liz-nav.navbar-default .navbar-brand {
+  color: black !important;
+  font-family: $font-cursive;
+  font-size: 22px;
+}
+
+#liz-nav.navbar-default .navbar-brand:hover {
+  font-weight: bolder;
+}
+
+#liz-nav.navbar-default {
+    font-size: 14px;
+    font-family: $font-serif;
+    background-color: rgba(255, 255, 255, 0.48);
+}
+
+#liz-nav.navbar-default .navbar-nav>li>a {
+    color: black !important;
+    background-color: rgba(248, 248, 248, 0);
+    padding-bottom: 10px;
+}
+
+#liz-nav.navbar-default .navbar-nav>li>a:hover,
+#liz-nav.navbar-default .navbar-nav>li>a:focus {
+    color: $color-red !important;
+}
+
+
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
 }
-.center-ul-hover:before {
+.hvr-underline-from-center:before {
   content: "";
   position: absolute;
   z-index: -1;
   left: 50%;
   right: 50%;
   bottom: 0;
-  background: $blue-light;
+  background: $color-red;
   height: 4px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
@@ -342,7 +197,7 @@ Main Nav
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.center-ul-hover:hover:before, .center-ul-hover:focus:before, .center-ul-hover:active:before {
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
   left: 0;
   right: 0;
 }
@@ -353,126 +208,86 @@ Main Nav
 
 
 
-/*
-==============================================
-IMAGES
-==============================================
-*/
 
-.image-container {
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-	height: 400px;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	z-index: 10;
+
+
+
+
+
+/* INDEX */
+.index-third {
+  color: $color-dark-grey;
+  margin-bottom: 20px;
 }
 
-.image-container img {
-	max-width: 100%;
-	position: absolute;
-	bottom: 0;
+.index-third h1 {
+  font-weight: 100;
+  font-size: 28px;
 }
 
-.overlap-image {
-	position: relative;
-	margin-top: -400px;
-	height: 400px;
-	z-index: 15;
+.index-third p {
+  font-family: $font-sans;
+  color: $color-dark-grey;
+  padding: 15px 5px 20px 5px;
+  font-weight: 200;
 }
 
-@media screen and (min-width: 1100px) {
-	.image-container {
-			height: 500px;
-	}
-	.overlap-image {
-		margin-top: -500px;
-		height: 500px;
-	}
-
+.index-icon {
+  height: 70px;
 }
 
-@media screen and (min-width: 1500px) {
-	.image-container {
-			height: 700px;
-	}
-	.overlap-image {
-		margin-top: -700px;
-		height: 700px;
-		padding-top: 100px;
-	}
+.image-box {
+  padding: 20px 0 20px 0;
 }
 
-.overlap-image .absolute-bottom-transparent {
-	background: $transparent-white-overlay;
-	width: 100%;
-	position: absolute;
-	margin: 0px;
-	padding: 25px;
-	bottom: 0;
+#branding:hover {
+  color: $color-purple !important;
 }
 
-@media screen and (max-width: 768px) {
-	.image-container {
-		text-align: center;
-		width: 300%;
-		margin-left: -100%;
-	}
-
-	.image-container img {
-		display: inline-block;
-		height: 400px;
-		width: auto;
-		position: relative;
-	}
-
-	.overlap-image {
-		margin-top: -400px;
-		height: 400px;
-	}
+#design:hover {
+  color: $color-red !important;
 }
 
-
-
-
-
-
-
-/*
-==============================================
-Footer
-==============================================
-*/
-
-footer {
-	background-color: $blue-dark;
-	color: $creme;
-	padding: 30px 0 0 0;
+#dev:hover {
+  color: $color-orange !important;
 }
 
-.page-minus-footer {
-	min-height: calc(100vh - 300px);
+/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 }
 
-footer h1 {
-	color: white;
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 }
 
-.social-row {
-	margin: 15px 0 15px 0;
+.hvr-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-footer .icon {
-	font-size: 40px;
-	padding: 0 10px 0 10px;
-}
-
-footer .icon:hover {
-	color: $blue-light;
-}
-
-.social-row {
-	margin-bottom: 25px;
+.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.35s;
+  animation-duration: 0.35s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 
@@ -486,50 +301,40 @@ footer .icon:hover {
 
 
 
-/*
-==============================================
-Login Pages
-==============================================
-*/
 
-.basic-info label {
-	padding-top: 10px;
+
+
+/* PORTFOLIO */
+.site-preview-box {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin: 20px;
+  padding: 20px 10px 20px 10px;
 }
 
-.problems-area label {
-	padding-left: 25px !important;
+.site-preview-box:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+.site-preview-box h2 {
+  font-family: $font-serif;
+  color: $color-dark-grey;
+  font-weight: 100;
+}
 
+@media screen and (min-width: 768px) {
+  .site-preview-box .p-box {
+    height: 140px;
+  }
+}
 
+.portfolio-image {
+  height: 200px;
+  margin: 20px 0 20px 0;
+  border: solid thin $color-light-grey;
+}
 
-
-
-
-/*
-===============================================
-Forms
-===============================================
-*/
-
-/* FAKED FORM CONTROL */
-select#contact_preferred_contact, select#contact_purpose {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+.site-preview-box a:hover, .site-preview-box a:focus {
+  text-decoration: none !important;
 }
 
 
@@ -539,139 +344,102 @@ select#contact_preferred_contact, select#contact_purpose {
 
 
 
+/* HIRING */
 
-/*
-===============================================
-Pages
-===============================================
-*/
-
-.container h1 {
-	margin: 30px 0 25px 0;
+.site-quote {
+  padding: 0 10px 20px 10px;
 }
 
-/* User#show */
-.users .icon {
-	font-size: 30px;
-	padding: 0 10px 0 0;
+.site-quote:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.users h1 {
-	margin-top: 50px;
-	border-bottom: thin $grey-dark solid;
+.orange-box {
+  margin: 15px 0 15px 0;
+  border: solid thin $color-orange;
+  border-radius: 5px;
 }
 
-@media screen and (max-width: 435px) {
-	.users .icon {
-		font-size: 20px;
-		padding: 0 5px 0 0;
-	}
+.site-quote h4 {
+  font-family: $font-sans;
+  font-weight: bolder;
+  color: $color-dark-grey;
 }
 
-.icon:hover {
-	text-decoration: none;
-}
-
-.archivedDiv {
-	color: $grey-dark;
+.size-icon {
+  width: 40%;
+  max-width: 100px;
+  margin: 15px 0 10px 0;
 }
 
 
 
-/* listings */
-
-.fancy-border {
-	border: solid 1px $blue-dark;
-	background-color: white;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	margin-bottom: 40px;
-}
-
-.fancy-border h1,
-.fancy-border h2,
-.fancy-border h3,
-.fancy-border h4,
-.fancy-border h5,
-.fancy-border p {
-	padding-left: 25px;
-	padding-right: 25px;
-}
-
-.fancy-border *:hover {
-	text-decoration: none !important;
-}
-
-.property-details img.fancy-border {
-	margin-bottom: 5px;
-}
-
-.property-details {
-	padding: 0 20px 20px 20px;
-	position: relative;
-}
-
-.property-details a {
-	color: $blue-dark;
-}
-
-.property-details:hover {
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-.property-details a:hover {
-	text-decoration: none;
-	color: $blue-dark;
-}
-
-.property-details .ion {
-	padding: 0 5px 0 5px;
-}
-
-.property-details .ion:hover {
-	color: $grey-dark;
-}
-
-.property-details h2 {
-	font-family: $font-decorative;
-	margin-left: 15px;
-}
-
-.property-details img {
-	width: 100%;
-}
 
 
 
-/* Listings#show */
-
-.header-row.listings-show h1 {
-	margin-bottom: 0px;
-	padding-bottom: 5px;
-}
-
-.header-row.listings-show h3 {
-	margin-top: 0px;
-	padding-top: 0px;
-}
-
-.header-row.listings-show img {
-	max-width: 500px;
-	margin: 25px 0 5px 0;
-}
-
-.card.property-details {
-	padding: 25px;
-}
 
 
-/* Blog */
+
+/* BLOGS */
 #tag_cloud {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-  width: 400px;
   line-height: 1.6em;
   .s { font-size: 0.8em; }
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
+}
+
+.blog a:hover {
+	color: $color-orange !important;
+	text-decoration: none !important;
+}
+
+.blog .icon {
+	font-size: 26px;
+	padding: 0 3px 0 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* INQUIRIES */
+table th {
+  padding: 5px 15px 5px 15px;
+  border: thin $color-light-grey solid;
+}
+
+table td {
+  padding: 5px 15px 5px 15px;
+  border: thin $color-light-grey solid;
+}
+
+.mini-icon {
+  width: 30%;
+  margin-bottom: 15px;
+}
+
+li {
+  font-family: $font-sans !important;
+  color: $color-dark-grey !important;
+}
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+footer h1 {
+  font-family: $font-cursive !important;
 }
