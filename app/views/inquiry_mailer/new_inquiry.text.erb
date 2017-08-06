@@ -1,0 +1,21 @@
+New Freelance Inquiry
+
+==============================================
+
+Client: <%= @inquiry.name %>
+
+Email: </strong><%= @inquiry.email %>
+
+Project Components:
+    <% if @inquiry.site_design %>  -  Site Design<% end %>
+    <% if @inquiry.development %>  -  Development<% end %>
+    <% if @inquiry.copywriting %>  -  Copywriting/Content<% end %>
+    <% if @inquiry.social_media %>  -  Social Media<% end %>
+    <% if @inquiry.seo %>  -  SEO<% end %>
+    <% if @inquiry.analytics %>  -  Analytics<% end %>
+    <% if @inquiry.print_materials %>  -  Print Materials<% end %>
+    <% if @inquiry.graphic_design %>  -  Graphic Design<% end %>
+    <% if @inquiry.logo_design %>  -  Logo Design<% end %>
+
+Project Details:
+<%= @inquiry.other %>

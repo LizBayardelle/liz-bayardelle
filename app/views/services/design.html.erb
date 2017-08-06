@@ -1,0 +1,46 @@
+<%= content_for :page_title, 'Graphic Design' %>
+
+<div class="container">
+  <h1 class="text-center">The Basics of Graphic Design</h1>
+  <p class="text-center col-md-8 col-md-push-2">Everyone has heard the buzz words "graphic design", but what does it really entail?  More importantly, how could it help your business?  Here's all you need to know:</p>
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <div class="image-box">
+        <%= image_tag 'icon_design.png', class: "index-icon" %>
+      </div> <!-- image box -->
+      <h2>Graphic <br class="hidden-lg hidden-md">Design</h2>
+      <p>You have three main tools to grab someone's visual attention: pictures, typography, and graphics. Graphic design is the official name for this science-slash-art.</p>
+    </div> <!-- column -->
+
+    <div class="col-sm-4 text-center">
+      <div class="image-box">
+        <%= image_tag 'icon_logo.png', class: "index-icon" %>
+      </div> <!-- image box -->
+      <h2>Logo <br class="hidden-lg hidden-md">Design</h2>
+      <p>A logo is the first thing anyone will see about your company. You get a square inch of space to convey your entire brand. It's important to make it count.</p>
+    </div> <!-- column -->
+
+    <div class="col-sm-4 text-center">
+      <div class="image-box">
+        <%= image_tag 'icon_print.png', class: "index-icon" %>
+      </div> <!-- image box -->
+      <h2>Print <br class="hidden-lg hidden-md">Materials</h2>
+      <p>The internet is a lovely place, but most of us live in the real world where business cards, letterhead, and brochures are still quite effective.</p>
+    </div> <!-- column -->
+  </div> <!-- row -->
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <div class="text-center row">
+    <%= link_to "Get a Proposal", new_inquiry_path, class: "btn hvr-grow" %>
+    <h4><%= link_to "Home", root_path %></h4>
+  </div> <!-- button row -->
+
+</div> <!-- page container -->

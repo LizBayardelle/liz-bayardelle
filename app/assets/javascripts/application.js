@@ -13,11 +13,6 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require ckeditor-jquery
+//= require bootstrap-markdown-bundle
 //= require turbolinks
 //= require_tree .
-
-
-$('.ckeditor').ckeditor({
-  // optional config
-});

@@ -1,0 +1,47 @@
+<%= content_for :page_title, 'Strategy and Branding' %>
+
+<div class="container">
+  <h1 class="text-center">Strategy & Branding 101</h1>
+  <p class="text-center col-md-8 col-md-push-2">Your company is just like a person. It has a feel, a personality, a vibe.  Branding is how your company "talks" to the outside world.  Here's all you need to know:</p>
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <div class="image-box">
+        <%= image_tag 'icon_sm.png', class: "index-icon" %>
+      </div> <!-- image box -->
+      <h2>Social Media</h2>
+      <p>This is "all the craze" with the kids these days (and their baggy pants and their rap music). Actually, with everyone. This is the next frontier of marketing. Don't get left behind.</p>
+    </div> <!-- column -->
+
+    <div class="col-sm-4 text-center">
+      <div class="image-box">
+        <%= image_tag 'icon_copy.png', class: "index-icon" %>
+      </div> <!-- image box -->
+      <h2>Copywriting</h2>
+      <p>Nothing can turn a potential customer off faster than poorly-written copy. The words you choose are essential not only to communicating your brand and as the first proof of your competency.</p>
+    </div> <!-- column -->
+
+    <div class="col-sm-4 text-center">
+      <div class="image-box">
+        <%= image_tag 'icon_analytics.png', class: "index-icon" %>
+      </div> <!-- image box -->
+      <h2>Analytics</h2>
+      <p>How do you know if what you're doing is working? You can't know for sure...that is unless you make a strategic plan ahead of time, decide on which metrics are important, and collect data.</p>
+    </div> <!-- column -->
+  </div> <!-- row -->
+
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <div class="text-center row">
+    <%= link_to "Get a Proposal", new_inquiry_path, class: "btn hvr-grow" %>
+    <h4><%= link_to "Home", root_path %></h4>
+  </div> <!-- button row -->
+
+</div> <!-- page container -->

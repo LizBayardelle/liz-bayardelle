@@ -10,7 +10,7 @@ class Blog < ActiveRecord::Base
 
 
   def send_email
-    User.where(blog_emails: true).each do |user|
+    User.where(opt_in: true).each do |user|
       BlogMailer.new_blog(self, user).deliver_now
     end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506205935) do
+ActiveRecord::Schema.define(version: 20170806211134) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -82,6 +82,27 @@ ActiveRecord::Schema.define(version: 20170506205935) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "inquiries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.boolean  "analytics",       default: false
+    t.boolean  "seo",             default: false
+    t.boolean  "social_media",    default: false
+    t.boolean  "logo_design",     default: false
+    t.boolean  "graphic_design",  default: false
+    t.boolean  "print_materials", default: false
+    t.boolean  "copywriting",     default: false
+    t.boolean  "site_design",     default: false
+    t.boolean  "development",     default: false
+    t.text     "other"
+    t.string   "project_name"
+    t.integer  "user_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "inquiries", ["user_id"], name: "index_inquiries_on_user_id"
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -126,6 +147,7 @@ ActiveRecord::Schema.define(version: 20170506205935) do
     t.string   "last_name"
     t.boolean  "opt_in",                 default: false
     t.boolean  "admin",                  default: false
+    t.string   "phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

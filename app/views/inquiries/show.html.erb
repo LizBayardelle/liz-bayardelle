@@ -1,0 +1,32 @@
+<%= content_for :page_title, @inquiry.project_name %>
+
+<div class="container">
+  <h1 class="text-center"><%= @inquiry.project_name %></h1>
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <h2><strong>Client: </strong><%= @inquiry.name %></h2>
+  <h3><strong>Email: </strong><%= @inquiry.email %></h3>
+  <h3><strong>Project Components: </strong></h3>
+    <ul>
+      <% if @inquiry.site_design %><li>Site Design</li><% end %>
+      <% if @inquiry.development %><li>Development</li><% end %>
+      <% if @inquiry.copywriting %><li>Copywriting/Content</li><% end %>
+      <% if @inquiry.social_media %><li>Social Media</li><% end %>
+      <% if @inquiry.seo %><li>SEO</li><% end %>
+      <% if @inquiry.analytics %><li>Analytics</li><% end %>
+      <% if @inquiry.print_materials %><li>Print Materials</li><% end %>
+      <% if @inquiry.graphic_design %><li>Graphic Design</li><% end %>
+      <% if @inquiry.logo_design %><li>Logo Design</li><% end %>
+    </ul>
+  <h3><strong>Project Details: </strong></h3>
+  <p><%= @inquiry.other %></p>
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <h3 class="text-center"><%= link_to "Back to Index", liz_inquiries_path %></h3>
+</div> <!-- container -->

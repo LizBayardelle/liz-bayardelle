@@ -3,9 +3,7 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     @contacts = Contact.where(archived: false)
     @archived_contacts = Contact.where(archived: true)
-    @confirmed_clients = User.where(admin: false, archived: false, status_confirmed: true)
-    @unconfirmed_clients = User.where(admin: false, archived: false, status_confirmed: false)
-    @archived_clients = User.where(archived: true)
+    @clients = User.where(admin: false)
     @comments = Comment.where(approved: false)
   end
 

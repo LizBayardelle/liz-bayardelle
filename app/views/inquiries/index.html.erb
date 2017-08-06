@@ -1,0 +1,40 @@
+<%= content_for :page_title, 'Inquiries' %>
+
+<div class="container">
+  <h1 class="text-center" style="margin-bottom: 30px">My Messages</h1>
+  <table>
+  <tr>
+    <th>Project Name</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Components</th>
+    <th>Details</th>
+    <th> </th>
+  </tr>
+  <% @inquiries.each do |m| %>
+    <tr>
+      <td><%= m.project_name %></td>
+      <td><%= m.name %></td>
+      <td><%= m.email %></td>
+      <td>
+        <% if m.site_design %>Site Design<br><% end %>
+        <% if m.development %>Development<br><% end %>
+        <% if m.copywriting %>Copywriting/Content<br><% end %>
+        <% if m.social_media %>Social Media<br><% end %>
+        <% if m.seo %>SEO<br><% end %>
+        <% if m.analytics %>Analytics<br><% end %>
+        <% if m.print_materials %>Print Materials<br><% end %>
+        <% if m.graphic_design %>Graphic Design<br><% end %>
+        <% if m.logo_design %>Logo Design<br><% end %>
+      </td>
+      <% if m.other == nil %>
+        <td>None</td>
+      <% else %>
+        <td><%= link_to "Details", liz_inquiry_path(m) %></td>
+      <% end %>
+      <td><%= link_to liz_inquiry_path(m),
+            data: {:confirm => 'Are you sure?'}, :method => :delete do %><i class="icon ion-close-circled"></i><% end %></td>
+    </tr>
+  <% end %>
+</table>
+</div> <!-- page container -->

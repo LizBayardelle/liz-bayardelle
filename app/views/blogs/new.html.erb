@@ -1,7 +1,28 @@
 <div class="container">
-  <h1 class="text-center">New Blog Entry</h1>
-
-  <%= render 'form' %>
-
-  <h4 class="text-center"><%= link_to 'Back', blogs_path %></h4>
-</div> <!-- container -->
+	<div class="text-center">
+		<h1>Write a New Blog Post</h1>
+		<p>If using code blocks, don't forget the language after the ```.</p>
+	</div> <!-- center header -->
+	<div>
+		<%= simple_form_for @blog do |b| %>
+			<div class="form-group">
+				<%= b.label :title %>
+				<%= b.text_field :title, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= b.label :teaser %>
+				<%= b.text_area :teaser, rows: 2, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= b.label "Tags" %>
+				<%= b.text_area :tag_list, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= b.input :body, :input_html => {:rows => 10, :placeholder => "Enter some text.", "data-provide" => "markdown" }%>
+			</div>
+			<div class="text-center">
+				<%= b.submit "Create Blog", class: "btn" %>
+			</div>
+		<% end %>
+	</div> <!-- blogs -->
+</div> <!-- page container -->

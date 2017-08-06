@@ -1,0 +1,44 @@
+<%= content_for :page_title, 'Web Development' %>
+
+<div class="container">
+  <h1 class="text-center">Hiring a Web Designer for Dummies</h1>
+  <p class="text-center col-md-8 col-md-push-2">Not saying you're a dummy, but the mass of information that is available on getting a custom website developed is highly confusing and often quite frightening.  Here's all you need to know:</p>
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <div class="col-sm-4 text-center">
+    <div class="image-box">
+      <%= image_tag 'icon_layout.png', class: "index-icon" %>
+    </div> <!-- image box -->
+    <h2>Site Layout</h2>
+    <p>The art of creating a layout that highlights your content. This involves creating a user interface (UI) and a user experience (UX) that make people want to engage with your site.</p>
+  </div> <!-- column -->
+
+  <div class="col-sm-4 text-center">
+    <div class="image-box">
+      <%= image_tag 'icon_dev.png', class: "index-icon" %>
+    </div> <!-- image box -->
+    <h2>Development</h2>
+    <p>The science of translating what the site layout is supposed to look like into the code that will make it appear.  Remember the green text screen in the matrix? Yeah, that part.</p>
+  </div> <!-- column -->
+
+  <div class="col-sm-4 text-center">
+    <div class="image-box">
+      <%= image_tag 'icon_seo.png', class: "index-icon" %>
+    </div> <!-- image box -->
+    <h2>SEO</h2>
+    <p>Search engine optimization (SEO) is the behind-the-scenes process of making your code easily readible to search engines so your site is shown higher when someone is "googling" your industry.</p>
+  </div> <!-- column -->
+
+  <div class="row">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- row -->
+
+  <div class="text-center row">
+    <%= link_to "Get a Proposal", new_inquiry_path, class: "btn hvr-grow" %>
+    <h4><%= link_to "Home", root_path %></h4>
+  </div> <!-- button row -->
+
+</div> <!-- page container -->

@@ -1,0 +1,71 @@
+<%= content_for :page_title, 'New Inquiry' %>
+
+<div class="container">
+  <h1 class="text-center">Get More Information</h1>
+  <p class="text-center col-md-8 col-md-push-2">Whether it's a corporate website or a personal project, I can't wait to help you turn your ideas into internet reality.  Drop me a line and let's get plannning!</p>
+
+  <div class="row text-center">
+    <hr class="col-xs-6 col-xs-push-3" style="margin-top: 40px">
+  </div> <!-- row -->
+
+  <div class="row">
+    <div class="shadow-box col-sm-10 col-sm-push-1 col-md-8 col-md-push-2">
+      <h2 class="text-center">About the Project</h2>
+      <%= form_for @inquiry, class: "text-left" do |f| %>
+        <div class="form-group">
+          <%= f.label "Your Name" %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label "Your Email" %>
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label "Project Name" %>
+          <%= f.text_field :project_name, class: "form-control" %>
+        </div>
+        <div class="field">
+            <%= f.label "Project Components" %> <br />
+            <div class="row">
+              <p>
+              <div class="col-sm-4">
+                <div class="row text-center">
+                  <h4>Branding</h4>
+                  <%= image_tag 'icon_branding.png', class: "mini-icon" %>
+                </div>
+                <%= f.check_box :social_media %>Social Media <br />
+                <%= f.check_box :copywriting %>Copywriting <br />
+                <%= f.check_box :analytics %>Analytics <br />
+              </div>
+              <div class="col-sm-4">
+                <div class="row text-center">
+                  <h4>Design</h4>
+                  <%= image_tag 'icon_design.png', class: "mini-icon" %>
+                </div>
+                <%= f.check_box :graphic_design %>Graphic Design <br />
+                <%= f.check_box :logo_design %>Logo Design <br />
+                <%= f.check_box :print_materials %>Print Materials <br />
+              </div>
+              <div class="col-sm-4">
+                <div class="row text-center">
+                  <h4>Development</h4>
+                  <%= image_tag 'icon_dev.png', class: "mini-icon" %>
+                </div>
+                <%= f.check_box :site_design %>Site Design <br />
+                <%= f.check_box :development %>Development <br />
+                <%= f.check_box :seo %>SEO <br />
+              </div>
+            </p>
+          </div> <!-- row -->
+        </div> <!-- field -->
+        <div class="form-group" style="margin-top: 10px">
+          <%= f.label "Details" %>
+          <%= f.text_area :other, class: "form-control" %>
+        </div>
+        <div class="text-center">
+          <%= f.submit "Get a Proposal", class: "btn hvr-grow" %>
+        </div>
+      <% end %>
+    </div> <!-- shadow box -->
+  </div> <!-- row -->
+</div> <!-- page container -->

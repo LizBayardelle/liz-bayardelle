@@ -1,62 +1,43 @@
-<div class="image-container">
-	<%= image_tag "cliff.jpg", style: "top: 0", alt: "Houses on a hill overlooking the ocean in Laguna Beach, California." %>
-</div>
+<div class="container blog">
+	<div class="text-center">
+		<h1>Things I Didn't <br class="visible-xs">Use to Know</h1>
+		<p>As I stumble through the digital world, <br class="visible-xs">here are some things<br class="hidden-xs">I had to figure out <br class="visible-xs">the hard/laborious/Google-intensive way.</p>
 
-<div class="overlap-image text-center">
-	<div class="absolute-bottom-transparent">
-		<h1 style="position: relative">What You Need to Know</h1>
-		<div class="row text-center">
-			<div id="tag_cloud">
-				<% tag_cloud Blog.tag_counts, %w[s m l] do |tag, css_class| %>
-				<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+		<div class="row">
+			<div id="tag_cloud" class="col-xs-8 col-xs-push-2">
+			  <% tag_cloud Blog.tag_counts, %w[s m l] do |tag, css_class| %>
+			    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+			  <% end %>
+			</div> <!-- tag cloud -->
+		</div> <!-- tag cloud row -->
+
+		<% if current_user && current_user.admin %>
+			<p><%= link_to "Write New Post", new_blog_path %></p>
+		<% end %>
+	</div> <!-- center header -->
+
+	<div class="row text-center">
+		<hr class="col-xs-6 col-xs-push-3">
+	</div>
+
+	<div>
+		<% @blogs.each do |blog| %>
+			<h2>
+				<%= link_to blog.title, blog_path(blog) %>
+				<% if current_user && current_user.admin %>
+					<%= link_to edit_blog_path(blog) do %>
+						<i class="icon ion-ios-compose-outline"></i>
+					<% end %>
+					<%= link_to blog_path(blog), method: :delete, confirm: "Are you sure you want to delete this blog entry?" do %>
+						<i class="icon ion-ios-trash-outline"></i>
+					<% end %>
 				<% end %>
-			</div> <!-- col -->
-		</div> <!-- row w id -->
-	</div> <!-- absolute box -->
-</div> <!-- overlap image -->
-
-<div class="container" data-no-turbolink>
-  <% if current_user && current_user.admin %>
-    <div class="text-right" style="margin-top: 15px"><%= link_to 'New Blog', new_blog_path %></div>
-  <% end %>
-
-	<% if current_user %>
-		<h3 class="text-center"><%= link_to "Tell me whenever a new blog comes online!", subscribe_to_blog_path(@user), method: :post %></h3>
-	<% else %>
-		<h3 class="text-center"><%= link_to "Tell me whenever a new blog comes online!", new_user_registration_path %></h3>
-	<% end %>
-
-  <div class="row">
-    <% @blogs.each do |blog| %>
-      <%= link_to blog do %>
-        <div class="card">
-          <div class="image-box">
-            <%= image_tag blog.image.url, alt: blog.teaser %>
-          </div> <!-- padding box -->
-          <div class="padding-box">
-						<h1><%= blog.title %></h1>
-            <p><%= blog.teaser %></p>
-						<p><strong><%= raw blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></strong></p>
-            <h5><em>By <%= blog.user.first_name %> <%= blog.user.last_name %></em></h5>
-	          <h5>
-							<% if current_user && current_user.admin %>
-	              <%= link_to('Edit', edit_blog_path(blog), data: { turbolinks: false }) %>,
-	              <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-	            <% end %>
-						</h5>
-          </div> <!-- padding box -->
-        </div> <!-- card -->
-      <% end %> <!-- link -->
-    <% end %> <!-- blog each do -->
-  </div> <!-- row -->
-
-</div> <!-- container -->
-
-<div class="bottom-buffer"></div>
-
-
-<script>
-  $(function() {
-      $('.card').matchHeight();
-  });
-</script>
+			</h2>
+			<p><%= blog.teaser %></p>
+			<p><strong>Tags: <%= raw blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></strong></p>
+			<div class="row">
+			    <hr class="col-xs-6 col-xs-push-3">
+			</div> <!-- row -->
+		<% end %>
+	</div> <!-- blogs -->
+</div> <!-- page container -->
