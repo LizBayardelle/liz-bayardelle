@@ -12,36 +12,41 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$color-purple: #A7226E;
-$color-red: #EC2049;
-$color-orange: #F26B38;
-$color-dark-grey: #5e5e5e;
-$color-middle-grey: #939393;
-$color-light-grey: #d2d2d2;
+$purple: #A7226E;
+$red: #EC2049;
+$orange: #F26B38;
+$dark-grey: #5e5e5e;
+$middle-grey: #939393;
+$light-grey: #d2d2d2;
+$transparent-white: rgba(255, 255, 255, 0.75);
 $font-serif: 'Playfair Display', serif;
 $font-sans: 'Muli', sans-serif;
 $font-cursive: 'Clicker Script', cursive;
 
+* { z-index: 10; position: relative; }
+.bg-white { background-color: white }
 
+a { color: $red !important; }
+a:hover, a:focus { color: $orange !important; }
+a:visited { color: $purple !important; }
 
-a { color: $color-red !important; }
-a:hover, a:focus { color: $color-orange !important; }
-a:visited { color: $color-purple !important; }
+h1 { font-family: $font-serif !important; font-weight: bolder; color: $dark-grey !important; }
+h2 { font-family: $font-sans !important; color: $dark-grey !important; }
+h3 { font-family: $font-sans !important; color: $middle-grey !important; }
+p { font-family: $font-sans !important; color: $dark-grey !important; }
 
-h1 { font-family: $font-serif !important; font-weight: bolder; color: $color-dark-grey !important; }
-h2 { font-family: $font-sans !important; color: $color-dark-grey !important; }
-h3 { font-family: $font-sans !important; color: $color-middle-grey !important; }
-p { font-family: $font-sans !important; color: $color-dark-grey !important; }
+.top-pad-30 { padding-top: 30px }
+.bottom-pad-30 { padding-bottom: 30px }
 
 label {
-  font-color: $color-dark-grey !important;
+  font-color: $dark-grey !important;
   font-family: $font-sans !important;
   font-weight: bolder !important;
   text-transform: capitalize !important;
 }
 
 .dark-grey-bar {
-  background-color: $color-dark-grey !important;
+  background-color: $dark-grey !important;
   padding: 20px 0 40px 0;
 }
 
@@ -57,12 +62,12 @@ label {
 .cursive { font-family: $font-cursive; }
 
 .btn {
-  background: $color-purple;
-  background-image: -webkit-linear-gradient(top, $color-purple, $color-orange) !important;
-  background-image: -moz-linear-gradient(top, $color-purple, $color-orange) !important;
-  background-image: -ms-linear-gradient(top,$color-purple, $color-orange) !important;
-  background-image: -o-linear-gradient(top, $color-purple, $color-orange) !important;
-  background-image: linear-gradient(to bottom, $color-purple, $color-orange) !important;
+  background: $purple;
+  background-image: -webkit-linear-gradient(top, $purple, $orange) !important;
+  background-image: -moz-linear-gradient(top, $purple, $orange) !important;
+  background-image: -ms-linear-gradient(top,$purple, $orange) !important;
+  background-image: -o-linear-gradient(top, $purple, $orange) !important;
+  background-image: linear-gradient(to bottom, $purple, $orange) !important;
   -webkit-border-radius: 3;
   -moz-border-radius: 3;
   border-radius: 3px;
@@ -81,15 +86,15 @@ label {
 
 .btn:hover {
   text-decoration: none !important;
-  color: $color-red !important;
-  border: solid medium $color-red !important;
-  background: white !important;
+  color: $red !important;
+  border: solid medium $red !important;
+  background: $transparent-white !important;
   background-image: none !important;
   padding: 8px 20px 8px 20px !important;
 }
 
 .outline-box {
-  border: solid thin $color-light-grey;
+  border: solid thin $light-grey;
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
   margin: 20px 0 20px 0;
@@ -101,7 +106,50 @@ label {
 
 
 
+/*
+==============================================
+Responsive Hero
+==============================================
+*/
 
+
+.responsive-hero-div {
+	width: 100%;
+	height: 400px;
+	position: fixed;
+	overflow: hidden;
+  z-index: 0;
+}
+
+.responsive-hero-img {
+	position: fixed;
+	top: 50%;
+	width: 100%;
+	min-height: 100%;
+	display: block;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	min-width:100%;
+}
+
+.overlap-responsive-image {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	z-index: 15;
+}
+
+@media screen and (max-width: 768px) {
+  .responsive-hero-img {
+    width: auto;
+    max-width: 300%;
+  }
+}
+
+.over-image-text {
+  color: white !important;
+  text-shadow: 2px 2px 7px rgba(50, 50, 50, 1);
+}
 
 
 
@@ -140,6 +188,13 @@ label {
 
 
 /* LIZ NAV */
+#liz-nav.navbar-default {
+  position: relative;
+  margin-bottom: 0;
+  border: none;
+  background-color: $transparent-white;
+}
+
 #liz-nav.navbar-default .navbar-brand {
   color: black !important;
   font-family: $font-cursive;
@@ -153,18 +208,16 @@ label {
 #liz-nav.navbar-default {
     font-size: 14px;
     font-family: $font-serif;
-    background-color: rgba(255, 255, 255, 0.48);
 }
 
 #liz-nav.navbar-default .navbar-nav>li>a {
     color: black !important;
-    background-color: rgba(248, 248, 248, 0);
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 #liz-nav.navbar-default .navbar-nav>li>a:hover,
 #liz-nav.navbar-default .navbar-nav>li>a:focus {
-    color: $color-red !important;
+    color: $red !important;
 }
 
 
@@ -189,8 +242,8 @@ label {
   left: 50%;
   right: 50%;
   bottom: 0;
-  background: $color-red;
-  height: 4px;
+  background: $red;
+  height: 6px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
   -webkit-transition-duration: 0.3s;
@@ -207,6 +260,14 @@ label {
 
 
 
+/*
+==============================================
+PARALLAX
+==============================================
+*/
+
+
+
 
 
 
@@ -217,7 +278,7 @@ label {
 
 /* INDEX */
 .index-third {
-  color: $color-dark-grey;
+  color: $dark-grey;
   margin-bottom: 20px;
 }
 
@@ -228,7 +289,7 @@ label {
 
 .index-third p {
   font-family: $font-sans;
-  color: $color-dark-grey;
+  color: $dark-grey;
   padding: 15px 5px 20px 5px;
   font-weight: 200;
 }
@@ -242,15 +303,15 @@ label {
 }
 
 #branding:hover {
-  color: $color-purple !important;
+  color: $purple !important;
 }
 
 #design:hover {
-  color: $color-red !important;
+  color: $red !important;
 }
 
 #dev:hover {
-  color: $color-orange !important;
+  color: $orange !important;
 }
 
 /* Pulse Grow */
@@ -318,7 +379,7 @@ label {
 
 .site-preview-box h2 {
   font-family: $font-serif;
-  color: $color-dark-grey;
+  color: $dark-grey;
   font-weight: 100;
 }
 
@@ -331,7 +392,7 @@ label {
 .portfolio-image {
   height: 200px;
   margin: 20px 0 20px 0;
-  border: solid thin $color-light-grey;
+  border: solid thin $light-grey;
 }
 
 .site-preview-box a:hover, .site-preview-box a:focus {
@@ -357,14 +418,14 @@ label {
 
 .orange-box {
   margin: 15px 0 15px 0;
-  border: solid thin $color-orange;
+  border: solid thin $orange;
   border-radius: 5px;
 }
 
 .site-quote h4 {
   font-family: $font-sans;
   font-weight: bolder;
-  color: $color-dark-grey;
+  color: $dark-grey;
 }
 
 .size-icon {
@@ -390,7 +451,7 @@ label {
 }
 
 .blog a:hover {
-	color: $color-orange !important;
+	color: $orange !important;
 	text-decoration: none !important;
 }
 
@@ -413,12 +474,12 @@ label {
 /* INQUIRIES */
 table th {
   padding: 5px 15px 5px 15px;
-  border: thin $color-light-grey solid;
+  border: thin $light-grey solid;
 }
 
 table td {
   padding: 5px 15px 5px 15px;
-  border: thin $color-light-grey solid;
+  border: thin $light-grey solid;
 }
 
 .mini-icon {
@@ -428,7 +489,7 @@ table td {
 
 li {
   font-family: $font-sans !important;
-  color: $color-dark-grey !important;
+  color: $dark-grey !important;
 }
 
 
@@ -440,6 +501,10 @@ li {
 
 
 /* FOOTER */
+
+footer {
+  background-color: white;
+}
 
 footer h1 {
   font-family: $font-cursive !important;

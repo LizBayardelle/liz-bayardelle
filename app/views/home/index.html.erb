@@ -1,51 +1,54 @@
-<%= content_for :page_title, 'Liz Bayardelle, Digital Polymath' %>
+<%= content_for :page_title, "Hi, I'm Liz." %>
 
-<div class="container text-center">
+<div class="responsive-hero-div">
+	<%= image_tag "desk.jpg", class: "responsive-hero-img", alt: "A picture of what I wish my desk actually looked like." %>
+</div> <!-- responsive hero div -->
 
-<div class="row text-center">
-  <h1 style="margin-left: -100px; margin-bottom: 30px"><span class="cursive" style="font-size: 38px">Liz&nbsp;Bayardelle,</span></br>
-    <span style="margin-left: 170px; font-size: 28px;">Digital&nbsp;Polymath</span></h1>
-  <%= link_to 'Free Consultation', new_inquiry_path, class: "btn hvr-grow" %>
+<div class="overlap-responsive-image">
+  <div class="row text-center">
+    <h1 class="over-image-text" style="margin: 100px 0 30px -100px">
+      <span class="cursive" style="font-size: 48px">Liz&nbsp;Bayardelle,</span></br>
+      <span style="margin-left: 170px; font-size: 38px;">Digital&nbsp;Polymath</span>
+    </h1>
+    <%= link_to 'Free Consultation', new_inquiry_path, class: "btn hvr-grow" %>
+  </div> <!-- row -->
+</div> <!-- overlap image -->
+
+<div class="row text-center top-pad-30 bg-white">
+  <div class="container">
+      <div class="row">
+      <%= link_to services_branding_path do %>
+        <div class="col-xs-12 col-sm-4 index-third hvr-pulse-grow" id="branding">
+          <div class="image-box">
+            <%= image_tag 'icon_branding.png', class: "index-icon" %>
+          </div> <!-- image box -->
+          <h1>Strategy &<br class="visible-sm visible-md"> Branding</h1>
+          <p>A great company doesn't happen by accident. Make a plan that communicates who you are to the world.</p>
+        </div> <!-- third -->
+      <% end %>
+
+      <%= link_to services_design_path do %>
+        <div class="col-xs-12 col-sm-4 index-third hvr-pulse-grow" id="design">
+          <div class="image-box">
+            <%= image_tag 'icon_design.png', class: "index-icon" %>
+          </div> <!-- image box -->
+          <h1>Graphic <br class="visible-sm visible-md">Design</h1>
+          <p>The first impression of your website depends on stunning images and intuitive design. Make sure your first impression is a good one.</p>
+        </div> <!-- third -->
+      <% end %>
+
+      <%= link_to services_dev_path do %>
+        <div class="col-xs-12 col-sm-4 index-third hvr-pulse-grow" id="dev">
+          <div class="image-box">
+            <%= image_tag 'icon_dev.png', class: "index-icon" %>
+          </div> <!-- image box -->
+          <h1>Web <br class="visible-sm visible-md">Development</h1>
+          <p>Your resident nerd-on-retainer. Watch your brainchildren appear in real life...well, if the internet qualifies as "real life".</p>
+        </div> <!-- third -->
+      <% end %>
+    </div> <!-- row -->
+  </div> <!-- page container -->
 </div> <!-- row -->
-
-<div class="row text-center">
-  <hr class="col-xs-6 col-xs-push-3" style="margin-top: 40px">
-</div> <!-- row -->
-
-<div class="row">
-
-  <%= link_to services_branding_path do %>
-    <div class="col-xs-12 col-sm-4 index-third hvr-pulse-grow" id="branding">
-      <div class="image-box">
-        <%= image_tag 'icon_branding.png', class: "index-icon" %>
-      </div> <!-- image box -->
-      <h1>Strategy &<br class="visible-sm visible-md"> Branding</h1>
-      <p>A great company doesn't happen by accident. Make a plan that communicates who you are to the world.</p>
-    </div> <!-- third -->
-  <% end %>
-
-  <%= link_to services_design_path do %>
-    <div class="col-xs-12 col-sm-4 index-third hvr-pulse-grow" id="design">
-      <div class="image-box">
-        <%= image_tag 'icon_design.png', class: "index-icon" %>
-      </div> <!-- image box -->
-      <h1>Graphic <br class="visible-sm visible-md">Design</h1>
-      <p>The first impression of your website depends on stunning images and intuitive design. Make sure your first impression is a good one.</p>
-    </div> <!-- third -->
-  <% end %>
-
-  <%= link_to services_dev_path do %>
-    <div class="col-xs-12 col-sm-4 index-third hvr-pulse-grow" id="dev">
-      <div class="image-box">
-        <%= image_tag 'icon_dev.png', class: "index-icon" %>
-      </div> <!-- image box -->
-      <h1>Web <br class="visible-sm visible-md">Development</h1>
-      <p>Your resident nerd-on-retainer. Watch your brainchildren appear in real life...well, if the internet qualifies as "real life".</p>
-    </div> <!-- third -->
-  <% end %>
-
-</div> <!-- row -->
-</div> <!-- page container -->
 
 <div class="row text-center dark-grey-bar">
   <div class="container">
