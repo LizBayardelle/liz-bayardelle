@@ -23,8 +23,13 @@ $font-serif: 'Playfair Display', serif;
 $font-sans: 'Muli', sans-serif;
 $font-cursive: 'Clicker Script', cursive;
 
+.font-sans { font-family: $font-sans !important }
+.font-serif { font-family: $font-serif !important }
+.font-cursive { font-family: $font-cursive !important }
+
 * { z-index: 10; position: relative; }
 .bg-white { background-color: white }
+.bg-transparent { background-color: $transparent-white }
 
 a { color: $red !important; }
 a:hover, a:focus { color: $orange !important; }
