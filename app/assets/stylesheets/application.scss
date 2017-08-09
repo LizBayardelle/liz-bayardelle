@@ -28,6 +28,8 @@ $font-cursive: 'Clicker Script', cursive;
 .font-cursive { font-family: $font-cursive !important }
 
 * { z-index: 10; position: relative; }
+.container { z-index: 50 }
+
 .bg-white { background-color: white }
 .bg-transparent { background-color: $transparent-white }
 
