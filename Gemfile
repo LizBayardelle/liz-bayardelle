@@ -39,3 +39,5 @@ gem 'rails-bootstrap-markdown'
 gem 'aws-sdk', '~> 2.3'
 gem 'rename'
 gem 'httparty'
+
+gem 'bigdecimal', '1.3.5' # needed because my rails version is a dinosaur
